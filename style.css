@@ -1,0 +1,490 @@
+/* 1. Global Reset to remove white gaps at the edges */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents accidental side-scrolling */
+    font-family: Arial, Helvetica, sans-serif; /* Set the new font */
+}
+
+/* HEADER BASE */
+.vibe-header {
+    /* Deep Ruby to Light Red Gradient */
+    background: linear-gradient(to right, #000, #910e0e, #e0115f);
+    padding: 15px 0;
+    width: 100%;
+    margin: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    max-width: 1000px; /* Matching our page width */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* TEXT STYLING */
+.site-logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.sale-message {
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-right: 20px;
+}
+
+/* THE BUTTON */
+.buy-now-btn {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    color: #9b111e; /* Deep Red Text */
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 50px; /* Fully Rounded */
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: inline-block;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* BUTTON HOVER EFFECT */
+.buy-now-btn:hover {
+    background-color: #000; /* Greyish Pink */
+    color: #fff; /* Change text to black on hover */
+    transform: translateY(-3px); /* Pop up effect */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: ease-in 0.2s;
+}
+
+.buy-now-btn:active {
+    transform: translateY(-1px);
+}
+
+/* SEARCH CONTAINER */
+.search-area-ruby {
+    background-color: #f8fafc;
+    padding: 40px 0;
+    width: 100%;
+}
+
+.search-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* THE SEARCH BAR */
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Black Shadow */
+    border-radius: 50px;
+}
+
+.search-input-ruby {
+    width: 100%;
+    padding: 18px 70px 18px 30px;
+    border-radius: 50px;
+    border: none;
+    font-size: 1.1rem;
+    font-family: Arial, sans-serif;
+    outline: none;
+    background-color: white;
+}
+
+/* THE CIRCLE ARROW */
+.search-circle-ruby {
+    position: absolute;
+    right: 10px;
+    width: 45px;
+    height: 45px;
+    background-color: #910e0e; /* Ruby Red */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.search-circle-ruby:hover {
+    background-color: #000000; /* Lighter Red */
+    transform: translateX(5px); /* Nudge right */
+}
+
+/* THE 4 TILES */
+.quick-tiles-ruby {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.vibe-tile-ruby {
+    background-color: white;
+    border: 1px solid transparent; /* Placeholder for hover border */
+    border-radius: 16px;
+    padding: 25px 20px;
+    text-decoration: none;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-sizing: border-box;
+}
+
+.kw-text {
+    color: #002244;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.tile-action {
+    color: #910e0e;
+    font-weight: 700;
+    font-size: 0.85rem;
+    align-self: flex-end;
+    transition: transform 0.3s ease;
+}
+
+/* TILE HOVER EFFECTS */
+.vibe-tile-ruby:hover {
+    background-color: #fbf1f1;
+    transform: translateY(-8px); /* Lift/Nudge upward */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Black shadow */
+    border: 1px solid #910e0e; /* Thin Ruby Line */
+}
+
+.vibe-tile-ruby:hover .tile-action {
+    transform: translateX(8px); /* Nudge "Search ➔" right */
+}
+
+/* TITLE SECTION CONTAINER */
+.brand-title-section {
+    width: 100%;
+    padding: 30px 0 20px 0;
+    text-align: center;
+}
+
+.title-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* SUB-TITLE: BLACK, 1rem */
+.related-sub-label {
+    font-family: Arial, sans-serif;
+    color: #000000;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px; /* Slight spacing for a premium look */
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* KEYWORD MAIN TITLE: GRADIENT, 2.5rem */
+.brand-gradient-title {
+    font-family: Arial, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 1000;
+    margin: 0;
+    text-align: center;
+    
+    /* BLACK TO RUBY RED GRADIENT */
+    background: linear-gradient(to right, #000000, #910e0e, #e0115f);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Fallback for older browsers */
+    color: #910e0e; 
+    
+    display: inline-block; /* Required for the gradient to clip correctly */
+}
+
+/* KEYWORD GRID LAYOUT */
+.keyword-grid-section {
+    width: 100%;
+    padding: 20px 0 60px 0;
+}
+
+.keyword-grid-3x2 {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Columns */
+    grid-template-rows: repeat(2, 1fr);    /* 2 Rows */
+    gap: 20px;
+    padding: 0 20px;
+}
+
+/* THE KEYWORD CARD */
+.kw-card {
+    background-color: #fdf7f7;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 40px 25px 20px 25px; /* More top padding to center the main text */
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 160px; /* Uniform height for the grid */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* TOP KEYWORD TEXT */
+.kw-main-text {
+    color: #000000; /* Black placeholder text */
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* BOTTOM RIGHT ACTION */
+.kw-action {
+    color: #910e0e; /* Dark Ruby */
+    font-weight: 700;
+    font-size: 0.9rem;
+    align-self: flex-end; /* Pushes to bottom right */
+    transition: transform 0.3s ease;
+}
+
+.kw-arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+/* HOVER EFFECTS */
+.kw-card:hover {
+    background-color: hwb(0 92% 2%);
+    transform: translateY(-8px); /* Nudge card up */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Light black shadow */
+    border: 1px solid #910e0e; /* Ruby Red Border */
+}
+
+.kw-card:hover .kw-action {
+    transform: translateX(8px); /* Nudge Search ➔ right */
+    color: #e0115f; /* Optional: Slight shift to light ruby on hover */
+}
+
+/* SPONSORED PRODUCTS SECTION */
+.sponsored-section {
+    max-width: 1000px;
+    margin: 10px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.section-title-center {
+    display: block;
+    margin-bottom: 40px;
+    font-size: 2.5rem; /* Following your previous upping of REM */
+}
+
+/* 4-COLUMN GRID */
+.product-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+/* THE PRODUCT CARD */
+.product-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    height: 370px; /* Taller than keyword cards */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-sizing: border-box;
+    text-align: left;
+}
+
+/* IMAGE AREA */
+.product-image-container {
+    background-color: #f1f5f9;
+    border-radius: 12px 12px 0 0;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 0px;
+}
+
+.product-image-container img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+.product-info {
+    background-color: #f9fbfc;
+    padding-top: 10px;
+    border-radius: 0 0 12px 12px;
+}
+
+/* TEXT INFO */
+.product-name {
+    font-size: 1rem;
+    color: #1a1a1a;
+    margin: 0 0 8px 8px;
+    font-weight: 700;
+}
+
+.star-rating {
+    font-size: 0.9rem;
+    margin: 0 0 20px 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* The Rating and the Count (233) are now grey */
+.rating-num, .rating-count {
+    color: #64748b; /* Slate Grey */
+    font-weight: 500;
+}
+
+/* Only the star is yellow/orange */
+.star-icon {
+    color: #f59e0b; /* Amber/Orange */
+    font-weight: 700;
+}
+
+/* 1. Vendor Section - Remove underline from the parent link */
+.vendor-link {
+    text-decoration: none !important;
+}
+
+/* 2. Remove any inherited underlines or borders from the inner text */
+.vendor-inner, 
+.vendor-brand, 
+.vendor-brand span, 
+.product-price {
+    text-decoration: none !important;
+    border-bottom: none !important;
+    display: flex;
+    align-items: center;
+}
+
+.vendor-inner {
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 10px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9fbfc;
+    margin: 0 8px 8px 8px;
+}
+
+.vendor-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #000000;
+    font-weight: 600;
+}
+
+.target-logo {
+    width: 18px;
+    height: 18px;
+}
+
+.product-price {
+    color: #475569;
+    font-weight: 400;
+}
+
+/* HOVER EFFECTS */
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Black shadow */
+    border: 1px solid #910e0e; /* Ruby Red Border */
+}
+
+/* The Table Grid Section */
+
+.kitchen-searches-section {
+    margin: 60px auto 60px auto; /* Increased top margin from 80px to 120px */
+    
+    /* 2. LOCK THE WIDTH */
+    max-width: 1000px; /* Matches the width of your cards and search bar */
+    width: 100%;
+    
+    /* 3. CENTER THE CONTENT */
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.center-text {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* TABLE STYLING */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.vibe-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+
+.vibe-table th {
+    text-align: left;
+    padding: 15px;
+    border-bottom: 2px solid #910e0e; /* Ruby Underline for Header */
+    color: #1a1a1a;
+}
+
+.vibe-table td {
+    padding: 15px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #475569;
+}
+
+.bold-cell {
+    color: #1a1a1a !important;
+    font-weight: 700;
+}
+
+/* RUBY TABLE BUTTON */
+.ruby-table-btn {
+    background-color: #910e0e;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ruby-table-btn:hover {
+    background-color: #000000;
+    transform: scale(1.05);
+}
+
