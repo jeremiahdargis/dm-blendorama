@@ -76,8 +76,12 @@ html, body {
 }
 
 .search-container {
-    max-width: 1000px;
-    margin: 0 auto;
+    max-width: 1000px; /* This is your magic number */
+    margin: 0 auto;    /* Centers the entire block */
+    padding: 0 20px;   /* Prevents touching screen edges on mobile */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* THE SEARCH BAR */
@@ -88,6 +92,7 @@ html, body {
     width: 100%;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Black Shadow */
     border-radius: 50px;
+    background-color: white;
 }
 
 .search-input-ruby {
@@ -130,6 +135,8 @@ html, body {
     grid-template-columns: repeat(4, 1fr);
     gap: 15px;
     margin-top: 30px;
+    width: 100%;       /* Makes it fill the 1000px container exactly */
+    max-width: 1000px; /* Double-check it doesn't exceed the search bar */
 }
 
 .vibe-tile-ruby {
@@ -370,7 +377,7 @@ html, body {
 }
 
 /* 1. Vendor Section - Remove underline from the parent link */
-.vendor-link {
+.vendor-link, .product-card {
     text-decoration: none !important;
 }
 
@@ -472,13 +479,17 @@ html, body {
 /* RUBY TABLE BUTTON */
 .ruby-table-btn {
     background-color: #910e0e;
-    color: white;
+    color: white !important; /* Ensure text is white */
+    text-decoration: none !important; /* Ensure no underline */
     border: none;
     padding: 8px 16px;
     border-radius: 6px;
     font-weight: 700;
+    font-size: 0.9rem;
+    display: inline-block; /* Makes it behave like a button */
     cursor: pointer;
     transition: all 0.3s ease;
+    text-align: center; /* Center the text inside the button */
 }
 
 .ruby-table-btn:hover {
