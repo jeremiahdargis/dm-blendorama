@@ -382,7 +382,8 @@ html, body {
 /* The Table Grid Section */
 
 .vibe-p-stacked {
-    text-align: left;
+    text-align: justify; /* Justify the text for a more professional look */
+    max-width: 1000px; /* Matches the width of your cards and search bar */
 }
 
 .kitchen-searches-section {
