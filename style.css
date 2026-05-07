@@ -143,12 +143,13 @@ html, body {
     background-color: white;
     border: 1px solid #910e0e4d; /* Thin Ruby Line */
     border-radius: 16px;
-    padding: 25px 20px;
+    padding: 35px 15px 35px 15px;
     text-decoration: none;
-    height: 100px;
+    height: 100%; /* Makes all tiles the same height */
+    width: 100%; /* Makes the tile fill the grid cell */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     box-sizing: border-box;
 }
@@ -157,7 +158,7 @@ html, body {
     color: #000000;
     font-weight: 700;
     font-size: 1rem;
-    text-align: left;
+    text-align: center;
 }
 
 .tile-action {
@@ -243,12 +244,13 @@ html, body {
     background-color: #fdf7f7;
     border: 1px solid #910e0e4d; /* Ruby Red Border */
     border-radius: 12px;
-    padding: 40px 25px 20px 25px; /* More top padding to center the main text */
+    padding: 70px 25px 70px 25px; /* More top padding to center the main text */
     text-decoration: none;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 160px; /* Uniform height for the grid */
+    justify-content: center;
+    height: 100%; /* Uniform height for the grid */
+    width: 100%; /* Full width of the grid cell */
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     box-sizing: border-box;
     position: relative;
@@ -292,7 +294,7 @@ html, body {
 /* PRODUCT RESULTS SECTION */
 .product-section {
     max-width: 1000px;
-    margin: 10px auto;
+    margin: 10px auto 40px auto;
     padding: 0 20px;
     text-align: center;
 }
@@ -376,61 +378,15 @@ html, body {
     font-weight: 700;
 }
 
-/* 1. Vendor Section - Remove underline from the parent link */
-.vendor-link, .product-card {
-    text-decoration: none !important;
-}
-
-/* 2. Remove any inherited underlines or borders from the inner text */
-.vendor-inner, 
-.vendor-brand, 
-.vendor-brand span, 
-.product-price {
-    text-decoration: none !important;
-    display: flex;
-    align-items: center;
-}
-
-.vendor-inner {
-    border: 1px solid #e2e8f0;
-    border-radius: 10px;
-    padding: 10px 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f9fbfc;
-    margin: 0 8px 10px 8px;
-}
-
-.vendor-brand {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: #000000;
-    font-weight: 600;
-}
-
-.target-logo {
-    width: 18px;
-    height: 18px;
-}
-
-.product-price {
-    color: #475569;
-    font-weight: 400;
-}
-
-/* HOVER EFFECTS */
-.product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Black shadow */
-    border: 1px solid #910e0e; /* Ruby Red Border */
-}
 
 /* The Table Grid Section */
 
+.vibe-p-stacked {
+    text-align: left;
+}
+
 .kitchen-searches-section {
-    margin: 60px auto 60px auto; /* Increased top margin from 80px to 120px */
+    margin: 10px auto 60px auto; 
     
     /* 2. LOCK THE WIDTH */
     max-width: 1000px; /* Matches the width of your cards and search bar */
@@ -483,10 +439,13 @@ html, body {
     text-decoration: none !important; /* Ensure no underline */
     border: none;
     padding: 8px 16px;
-    border-radius: 6px;
+    border-radius: 6px 6px 6px 6px; /* Rounded corners */
     font-weight: 700;
     font-size: 0.9rem;
-    display: inline-block; /* Makes it behave like a button */
+    display: inline-flex; /* Makes it behave like a button */
+    justify-content: center; /* Center the text horizontally */
+    align-items: center; /* Center the text vertically */
+    min-width: 200px; /* Makes the button fill the cell */
     cursor: pointer;
     transition: all 0.3s ease;
     text-align: center; /* Center the text inside the button */
@@ -497,3 +456,53 @@ html, body {
     transform: scale(1.05);
 }
 
+/* 1. Vendor Section - Remove underline from the parent link */
+.vendor-link, .product-card {
+    text-decoration: none !important;
+}
+
+/* 2. Remove any inherited underlines or borders from the inner text */
+.vendor-inner, 
+.vendor-brand, 
+.vendor-brand span, 
+.product-price {
+    text-decoration: none !important;
+    display: flex;
+    align-items: center;
+}
+
+.vendor-inner {
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 10px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9fbfc;
+    margin: 0 8px 10px 8px;
+}
+
+.vendor-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #000000;
+    font-weight: 600;
+}
+
+.target-logo {
+    width: 18px;
+    height: 18px;
+}
+
+.product-price {
+    color: #475569;
+    font-weight: 400;
+}
+
+/* HOVER EFFECTS */
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Black shadow */
+    border: 1px solid #910e0e; /* Ruby Red Border */
+}
