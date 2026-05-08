@@ -265,7 +265,10 @@ body.dark-theme .product-card:hover .rating-count {
 }
 
 body.dark-theme .product-card img {
-    background-color: transparent !important;
+    background-color: #ffffff; /* Forces a clean white */
+    padding: 3px;
+    border-radius: 60%; /* Turns the white box into a white circle */
+    object-fit: contain;
 }
 
 /* TITLE SECTION CONTAINER */
