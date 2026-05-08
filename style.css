@@ -254,9 +254,18 @@ body.dark-theme .kw-main-text, body.dark-theme .kw-text {
 body.dark-theme .kw-card:hover, 
 body.dark-theme .vibe-tile-ruby:hover,
 body.dark-theme .product-card:hover,
-body.dark-theme .product-image-container:hover {
+body.dark-theme .product-card:hover .product-image-container,
+body.dark-theme .product-card:hover .product-info,
+body.dark-theme .product-card:hover h4,
+body.dark-theme .product-card:hover .rating-num,
+body.dark-theme .product-card:hover .rating-count {
     background-color: #2a2a2a; /* Slightly lighter for hover */
     border-color: #b32d2e; /* Keeping that Blendorama Red accent */
+    transition: background-color 0.2s ease-in-out;
+}
+
+body.dark-theme .product-card img {
+    background-color: transparent !important;
 }
 
 /* TITLE SECTION CONTAINER */
@@ -424,6 +433,10 @@ body.dark-theme td {
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     box-sizing: border-box;
     text-align: left;
+}
+
+.inner-container {
+    margin: 0;
 }
 
 /* IMAGE AREA */
