@@ -25,6 +25,12 @@ html, body {
     padding: 0 20px;
 }
 
+.header-right {
+    display: flex; /* Aligns the sale message, button, and theme toggle in a row */
+    align-items: center; /* Vertically centers the items */
+    gap: 15px; /* Adds space between the items */
+}
+
 /* TEXT STYLING */
 .site-logo {
     color: white;
@@ -68,7 +74,45 @@ html, body {
     transform: translateY(-1px);
 }
 
+/* THEME TOGGLE BUTTON */
+
+/* Base Button Styling */
+#theme-toggle {
+    background: none;
+    border: 2px solid transparent;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 5px;
+    margin-left: 15px; /* Space it away from Buy Now */
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.1); /* Slight pop on hover */
+}
+
+/* Logic: Hide the Moon by default (since we start in Light Mode) */
+.dark-theme .sun-icon { display: none; }
+.moon-icon { display: none; }
+
+/* Logic: When body has .dark-theme, show the moon and hide the sun */
+.dark-theme .moon-icon { display: inline-block; }
+body:not(.dark-theme) .sun-icon { display: inline-block; }
+
+/* When Dark Mode is ACTIVE */
+body.dark-theme, 
+body.dark-theme .search-area-ruby, 
+body.dark-theme .related-sub-label {
+    background-color: #121212; /* Deep Dark Grey */
+    color: #ffffff;            /* White Text */
+}
+
+
 /* SEARCH CONTAINER */
+
 .search-area-ruby {
     background-color: #f8fafc;
     padding: 40px 0;
@@ -106,6 +150,15 @@ html, body {
     background-color: white;
 }
 
+/* Search Bar Dark Mode */
+body.dark-theme .search-wrapper, 
+body.dark-theme .search-input-ruby {
+    background-color: #222 !important;
+    color: #ffffff;
+    border: 1px solid #444;
+}
+
+
 /* THE CIRCLE ARROW */
 .search-circle-ruby {
     position: absolute;
@@ -127,6 +180,10 @@ html, body {
 .search-circle-ruby:hover {
     background-color: #000000; /* Lighter Red */
     transform: translateX(5px); /* Nudge right */
+}
+
+body.dark-theme .search-circle-ruby {
+    background-color: #910e0e; /* Keep the Ruby Red in dark mode */
 }
 
 /* THE 4 TILES */
@@ -181,6 +238,26 @@ html, body {
     transform: translateX(8px); /* Nudge "Search ➔" right */
 }
 
+/* Keyword Tiles Dark Mode */
+body.dark-theme .kw-card, 
+body.dark-theme .vibe-tile-ruby,
+body.dark-theme .product-card {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+}
+
+body.dark-theme .kw-main-text, body.dark-theme .kw-text {
+    color: #ffffff !important;
+}
+
+/* Hover state for tiles in dark mode */
+body.dark-theme .kw-card:hover, 
+body.dark-theme .vibe-tile-ruby:hover,
+body.dark-theme .product-card:hover {
+    background-color: #2a2a2a; /* Slightly lighter for hover */
+    border-color: #b32d2e; /* Keeping that Blendorama Red accent */
+}
+
 /* TITLE SECTION CONTAINER */
 .brand-title-section {
     width: 100%;
@@ -192,6 +269,8 @@ html, body {
     max-width: 1000px;
     margin: 0 auto;
 }
+
+
 
 /* SUB-TITLE: BLACK, 1rem */
 .related-sub-label {
@@ -213,7 +292,7 @@ html, body {
     text-align: center;
     
     /* BLACK TO RUBY RED GRADIENT */
-    background: linear-gradient(to right, #000000, #910e0e, #e0115f);
+    background: linear-gradient(to right, #000000, #910e0e, #e0115f); /* Gradient from black to ruby red */
     background-clip: text;
     -webkit-text-fill-color: transparent;
     
@@ -221,6 +300,24 @@ html, body {
     color: #910e0e; 
     
     display: inline-block; /* Required for the gradient to clip correctly */
+}
+
+body.dark-theme .brand-gradient-title {
+    background: linear-gradient(to right, #ffffff, #b32d2e, #e0115f); /* Lighter gradient for dark mode */
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+p {
+    font-family: Arial, sans-serif;
+    color: #475569;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 30px 0 30px 0;
+}
+
+body.dark-theme p, body.dark-theme th, body.dark-theme td {
+    color: #cbd5e1; /* Lighter Slate Grey for better contrast in dark mode */
 }
 
 /* KEYWORD GRID LAYOUT */
@@ -378,6 +475,15 @@ html, body {
     font-weight: 700;
 }
 
+/* DARK THEME PRODUCT INFO: NAME, RATING, PRICE */
+body.dark-theme .product-info,
+body.dark-theme .product-image-container,
+body.dark-theme .product-name,
+body.dark-theme .rating-num,
+body.dark-theme .rating-count {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
 
 /* The Table Grid Section */
 
@@ -433,6 +539,10 @@ html, body {
     font-weight: 700;
 }
 
+body.dark-theme .bold-cell {
+    color: #ffffff !important;
+}
+
 /* RUBY TABLE BUTTON */
 .ruby-table-btn {
     background-color: #910e0e;
@@ -455,6 +565,10 @@ html, body {
 .ruby-table-btn:hover {
     background-color: #000000;
     transform: scale(1.05);
+}
+
+body.dark-theme .ruby-table-btn {
+    background-color: #910e0e; /* Keep the Ruby Red in dark mode */
 }
 
 /* 1. Vendor Section - Remove underline from the parent link */
