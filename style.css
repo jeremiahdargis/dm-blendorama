@@ -268,7 +268,11 @@ body.dark-theme .product-card img {
     background-color: #ffffff; /* Forces a clean white */
     padding: 3px;
     border-radius: 60%; /* Turns the white box into a white circle */
-    object-fit: contain;
+    max-width: 90%;               /* The image won't fill the entire circle, creating a clean white "halo" */
+    max-height: 90%;
+    object-fit: contain;          /* Prevents stretching/distortion */
+    background-color: transparent; /* Since the parent handles the white */
+    margin: 0;                    /* Resets any defaults */
 }
 
 /* TITLE SECTION CONTAINER */
